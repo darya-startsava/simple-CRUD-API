@@ -6,7 +6,7 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "lint": "eslint \"src/**/*.ts\" --fix && eslint index.ts --fix",
-    "start:dev": "ts-node-dev --respawn -- index.ts",
+    "start:dev": " ts-node-dev --respawn -- index.ts",
     "start:prod": "ts-node index.ts"
   },
   "repository": {
@@ -20,6 +20,8 @@
   },
   "homepage": "https://github.com/darya-startsava/simple-CRUD-API#readme",
   "dependencies": {
+    "@types/node": "^20.3.3",
+    "@types/npm": "^7.19.0",
     "dotenv": "^16.3.1",
     "eslint": "^8.44.0",
     "ts-node": "^10.9.1",

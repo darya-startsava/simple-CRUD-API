@@ -1,8 +1,8 @@
 {
-    "compilerOptions": {
-        "module": "esnext",
-        "target": "esnext",
-        "noImplicitAny": true,
-        "sourceMap": true
-    }
+  "compilerOptions": {
+    "module": "CommonJS",
+    "target": "ESNext",
+    "noImplicitAny": true,
+    "sourceMap": true
+  }
 }
