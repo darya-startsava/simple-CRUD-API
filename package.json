@@ -1,0 +1,27 @@
+{
+  "name": "simple-crud-api",
+  "version": "1.0.0",
+  "description": "develop branch",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start:dev": "ts-node-dev --respawn -- index.ts", 
+    "start:prod":"ts-node index.ts"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/darya-startsava/simple-CRUD-API.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/darya-startsava/simple-CRUD-API/issues"
+  },
+  "homepage": "https://github.com/darya-startsava/simple-CRUD-API#readme",
+  "dependencies": {
+    "dotenv": "^16.3.1",
+    "ts-node": "^10.9.1",
+    "ts-node-dev": "^2.0.0",
+    "typescript": "^5.1.6"
+  }
+}
