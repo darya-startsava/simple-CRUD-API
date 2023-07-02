@@ -3,6 +3,8 @@
     "module": "CommonJS",
     "target": "ESNext",
     "noImplicitAny": true,
-    "sourceMap": true
+    "sourceMap": true,
+    "moduleResolution": "node",
+    "typeRoots": ["node_modules/@types"]
   }
 }
