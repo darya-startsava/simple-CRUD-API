@@ -21,7 +21,13 @@ const server = createServer((request: CustomRequest, response) => {
           break;
 
         case 'POST':
-          getBody(request, response, post);
+          if (request.url === ENDPOINT || request.url === `${ENDPOINT}/`) {
+            getBody(request, response, post);
+          } else {
+            response.statusCode = 404;
+            response.write(`Wrong url, it should be ${ENDPOINT}`);
+            response.end();
+          }
           break;
 
         case 'PUT':
