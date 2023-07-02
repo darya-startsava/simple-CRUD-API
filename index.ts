@@ -4,11 +4,10 @@ import 'dotenv/config';
 import { ENDPOINT } from './src/constants';
 import { get } from './src/get';
 import CustomRequest from './src/interfaces/customRequest';
+import users from './src/dataBase';
 import getBody from './src/getBody';
 import { post } from './src/post';
-import User from './src/interfaces/user';
-
-const users: Array<User> = [];
+import { put } from './src/put';
 
 const PORT = process.env.PORT || 4000;
 const server = createServer((request: CustomRequest, response) => {
@@ -31,6 +30,7 @@ const server = createServer((request: CustomRequest, response) => {
           break;
 
         case 'PUT':
+          getBody(request, response, put);
           break;
 
         case 'DELETE':
