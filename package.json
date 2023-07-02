@@ -22,6 +22,7 @@
   "dependencies": {
     "@types/node": "^20.3.3",
     "@types/npm": "^7.19.0",
+    "@types/uuid": "^9.0.2",
     "dotenv": "^16.3.1",
     "eslint": "^8.44.0",
     "ts-node": "^10.9.1",
