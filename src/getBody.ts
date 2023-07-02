@@ -11,9 +11,9 @@ const getBody = (
     data.push(dataChunk);
   });
   request.on('end', () => {
-    request.body = Buffer.concat(data).toString();
+    request.data = Buffer.concat(data).toString();
     if (request.headers['content-type'] === 'application/json') {
-      request.body = JSON.parse(request.body);
+      request.body = JSON.parse(request.data);
     }
 
     next(request, response);

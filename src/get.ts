@@ -1,16 +1,12 @@
-import { IncomingMessage, ServerResponse } from 'node:http';
+import { ServerResponse } from 'node:http';
 import CustomRequest from './interfaces/customRequest';
 import { ENDPOINT } from './constants';
 
-export const get = (
-  request: CustomRequest,
-  response: ServerResponse<IncomingMessage> & {
-    req: IncomingMessage;
-  }
-) => {
+export const get = (request: CustomRequest, response: ServerResponse) => {
   if (request.url === ENDPOINT) {
     response.statusCode = 200;
-    response.write(`${JSON.stringify(request.users)}`);
+    response.setHeader('Content-Type', 'application/json');
+    response.write(JSON.stringify(request.users));
     response.end();
   } else {
     response.statusCode = 404;
