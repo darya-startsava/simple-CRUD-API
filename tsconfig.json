@@ -6,5 +6,10 @@
     "sourceMap": true,
     "moduleResolution": "node",
     "typeRoots": ["node_modules/@types"]
+  },
+  "ts-node": {
+    "emit": true,
+    "compilerHost": true,
+    "files": true
   }
 }
