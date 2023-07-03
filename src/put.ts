@@ -2,6 +2,7 @@ import { ServerResponse } from 'node:http';
 import CustomRequest from './interfaces/customRequest';
 import requestBodyValidation from './validation/requestBodyValidation';
 import uuidValidation from './validation/uuidValidation';
+import users from './dataBase';
 
 export const put = (request: CustomRequest, response: ServerResponse) => {
   const id = request.url.split('/')[3];
@@ -12,7 +13,7 @@ export const put = (request: CustomRequest, response: ServerResponse) => {
       if (!validationIssues) {
         const editedUser = { ...request.body, ...{ id } };
         const index = request.users.findIndex((user) => user.id === id);
-        request.users[index] = editedUser;
+        users[index] = editedUser;
         response.statusCode = 201;
         response.setHeader('Content-Type', 'application/json');
         response.write(JSON.stringify(editedUser));

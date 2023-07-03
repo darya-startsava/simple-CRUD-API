@@ -23,6 +23,10 @@ for running application in production mode:
 ```
 npm run start:prod
 ```
+run tests:
+```
+npm run test
+```
 
 ## REST service docs
 ### Endpoint:
