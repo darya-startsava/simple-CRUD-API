@@ -1,4 +1,4 @@
-import { createServer } from 'http';
+import { createServer, ServerResponse } from 'http';
 import 'dotenv/config';
 
 import { ENDPOINT } from './src/constants';
@@ -12,6 +12,16 @@ import { del } from './src/delete';
 
 const PORT = process.env.PORT || 4000;
 const server = createServer((request: CustomRequest, response) => {
+  try {
+    handle(request, response);
+  } catch {
+    response.statusCode = 500;
+    response.write('Server error');
+    response.end();
+  }
+});
+
+function handle(request: CustomRequest, response: ServerResponse) {
   request.users = users;
   switch (request.url.slice(0, 10)) {
     case ENDPOINT:
@@ -54,7 +64,7 @@ const server = createServer((request: CustomRequest, response) => {
       response.end();
       break;
   }
-});
+}
 
 server.listen(PORT, () => {
   console.log(`Server is running on port ${PORT}`);
