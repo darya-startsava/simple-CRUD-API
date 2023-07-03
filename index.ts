@@ -41,7 +41,7 @@ const server = createServer((request: CustomRequest, response) => {
 
         default:
           response.statusCode = 404;
-          response.write('There is no such user');
+          response.write('This request is not implemented');
           response.end();
           break;
       }
