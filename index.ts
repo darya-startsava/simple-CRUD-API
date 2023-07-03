@@ -8,6 +8,7 @@ import users from './src/dataBase';
 import getBody from './src/getBody';
 import { post } from './src/post';
 import { put } from './src/put';
+import { del } from './src/delete';
 
 const PORT = process.env.PORT || 4000;
 const server = createServer((request: CustomRequest, response) => {
@@ -22,18 +23,20 @@ const server = createServer((request: CustomRequest, response) => {
         case 'POST':
           if (request.url === ENDPOINT || request.url === `${ENDPOINT}/`) {
             getBody(request, response, post);
+            break;
           } else {
             response.statusCode = 404;
             response.write(`Wrong url, it should be ${ENDPOINT}`);
             response.end();
+            break;
           }
-          break;
 
         case 'PUT':
           getBody(request, response, put);
           break;
 
         case 'DELETE':
+          getBody(request, response, del);
           break;
 
         default:
